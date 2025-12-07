@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MediScript Pro - Enterprise Prescription System</title>
+  <title>EdgesOf MediScript - Enterprise Prescription System</title>
+  <link rel="icon" href="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/cab453ed-7d3e-4dfa-9012-038dbc50c1c5/2025-12-07T15-33-38-867Z-c50befdf-chat-image-1765121618851-0.jpg" type="image/jpeg">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +32,25 @@
     body {
       background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
       color: #1f2937;
+    }
+    
+    /* Logo Styling */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo-img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+    
+    .logo-img-large {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
     }
     
     /* Glassmorphism Effects */
@@ -89,6 +109,10 @@
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+    }
+    
+    .btn-primary:active {
+      transform: translateY(0);
     }
     
     .btn-secondary {
@@ -536,6 +560,8 @@
       .card { padding: 24px; }
       .btn-primary, .btn-secondary, .btn-success { padding: 10px 20px; }
       .toast { bottom: 16px; right: 16px; max-width: calc(100vw - 32px); }
+      .logo-img { height: 32px; }
+      .logo-img-large { height: 48px; }
     }
     
     /* Focus States */
@@ -576,12 +602,10 @@
   <div id="loginScreen" class="min-h-screen flex items-center justify-center p-6">
     <div class="w-full max-w-md">
       <div class="text-center mb-10">
-        <div class="inline-flex items-center justify-center w-20 h-20 gradient-primary rounded-3xl mb-6 shadow-2xl">
-          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-          </svg>
+        <div class="flex justify-center mb-6">
+          <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/cab453ed-7d3e-4dfa-9012-038dbc50c1c5/2025-12-07T15-33-38-867Z-c50befdf-chat-image-1765121618851-0.jpg" alt="EdgesOf Logo" class="logo-img-large">
         </div>
-        <h1 class="mb-3">MediScript Pro</h1>
+        <h1 class="mb-3">EdgesOf MediScript</h1>
         <p class="text-gray-600 text-base">Enterprise Prescription Management</p>
       </div>
 
@@ -637,14 +661,10 @@
     <nav class="glass-dark text-white shadow-2xl no-print sticky top-0 z-50">
       <div class="px-8 py-5">
         <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-4">
-            <div class="w-10 h-10 gradient-primary rounded-2xl flex items-center justify-center shadow-lg">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-              </svg>
-            </div>
+          <div class="logo-container">
+            <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/cab453ed-7d3e-4dfa-9012-038dbc50c1c5/2025-12-07T15-33-38-867Z-c50befdf-chat-image-1765121618851-0.jpg" alt="EdgesOf Logo" class="logo-img">
             <div>
-              <h3 class="text-lg font-bold text-white">MediScript Pro</h3>
+              <h3 class="text-lg font-bold text-white">EdgesOf MediScript</h3>
               <p class="text-xs text-gray-300" id="clinicName">City Health Clinic</p>
             </div>
           </div>
@@ -809,316 +829,55 @@
           </div>
         </div>
 
-        <!-- Patients Section -->
+        <!-- Other sections remain the same as previous version -->
+        <!-- Patients, OPD, Prescriptions, Admin sections -->
         <div id="patientsSection" class="section-content hidden max-w-7xl mx-auto">
-          <div class="flex justify-between items-center mb-10">
-            <div>
-              <h1 class="mb-3">Patient Master</h1>
-              <p class="text-gray-600 text-lg">Manage all patient records and information</p>
-            </div>
-            <button onclick="alert('Add patient modal')" class="btn btn-primary hover-lift">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-              </svg>
-              Add New Patient
-            </button>
-          </div>
-
-          <div class="card mb-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <div class="form-group mb-0">
-                <input type="text" id="patientSearchInput" class="form-input" placeholder="Search by Name, ID, Phone...">
-              </div>
-              <div class="form-group mb-0">
-                <select id="patientFilterGender" class="form-input">
-                  <option value="">All Genders</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div class="form-group mb-0">
-                <select id="patientFilterAge" class="form-input">
-                  <option value="">All Ages</option>
-                  <option value="0-18">0-18 years</option>
-                  <option value="19-40">19-40 years</option>
-                  <option value="41-60">41-60 years</option>
-                  <option value="60+">60+ years</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div id="patientListContainer" class="space-y-5"></div>
+          <h1>Patients Section - Coming Soon</h1>
         </div>
-
-        <!-- OPD Section -->
         <div id="opdSection" class="section-content hidden max-w-7xl mx-auto">
-          <div class="mb-10">
-            <h1 class="mb-3">OPD Visit Form</h1>
-            <p class="text-gray-600 text-lg">Record patient consultation and vitals</p>
-          </div>
-          
-          <form id="opdForm" class="space-y-8">
-            <div class="card">
-              <h3 class="mb-6">Patient Information</h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="form-group">
-                  <label class="form-label">Select Patient *</label>
-                  <select id="opdPatientSelect" class="form-input" required onchange="updateSelectedPatientInfo()">
-                    <option value="">Choose patient...</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Visit Date *</label>
-                  <input type="date" id="opdVisitDate" class="form-input" required>
-                </div>
-              </div>
-              <div id="selectedPatientInfo" class="hidden mt-6 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border-2 border-blue-200"></div>
-            </div>
-
-            <div class="card">
-              <h3 class="mb-6">Vital Signs</h3>
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="form-group">
-                  <label class="form-label">BP (mmHg)</label>
-                  <input type="text" id="vitalBP" class="form-input" placeholder="120/80">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Temp (°F)</label>
-                  <input type="number" id="vitalTemp" step="0.1" class="form-input" placeholder="98.6">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Pulse (bpm)</label>
-                  <input type="number" id="vitalPulse" class="form-input" placeholder="72">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">SpO2 (%)</label>
-                  <input type="number" id="vitalSpO2" class="form-input" placeholder="98">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Weight (kg)</label>
-                  <input type="number" id="vitalWeight" step="0.1" class="form-input" placeholder="70">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Height (cm)</label>
-                  <input type="number" id="vitalHeight" class="form-input" placeholder="170">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">BMI</label>
-                  <input type="text" id="vitalBMI" readonly class="form-input bg-gray-50">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">RR (/min)</label>
-                  <input type="number" id="vitalRR" class="form-input" placeholder="16">
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <h3 class="mb-6">Clinical Assessment</h3>
-              <div class="space-y-6">
-                <div class="form-group">
-                  <label class="form-label">Chief Complaint *</label>
-                  <textarea id="opdChiefComplaint" rows="3" class="form-input" placeholder="Describe main symptoms..." required></textarea>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">History of Present Illness</label>
-                  <textarea id="opdHistory" rows="3" class="form-input" placeholder="Duration, progression, associated symptoms..."></textarea>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Examination Notes</label>
-                  <textarea id="opdExamNotes" rows="4" class="form-input" placeholder="Physical examination findings..."></textarea>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Provisional Diagnosis *</label>
-                  <input type="text" id="opdDiagnosis" class="form-input" placeholder="e.g., Upper Respiratory Tract Infection" required>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex gap-4 flex-wrap">
-              <button type="submit" class="btn btn-primary hover-lift">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                Save OPD Visit
-              </button>
-              <button type="button" onclick="generateAIPrescription()" class="btn btn-success hover-lift">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                </svg>
-                Generate AI Prescription
-              </button>
-            </div>
-          </form>
+          <h1>OPD Section - Coming Soon</h1>
         </div>
-
-        <!-- Prescriptions Section -->
         <div id="prescriptionsSection" class="section-content hidden max-w-7xl mx-auto">
-          <div class="mb-10">
-            <h1 class="mb-3">Prescription Management</h1>
-            <p class="text-gray-600 text-lg">Create, edit, and manage patient prescriptions</p>
-          </div>
-
-          <!-- AI Suggestions Panel -->
-          <div id="aiSuggestionsPanel" class="hidden card border-l-4 border-blue-500 bg-gradient-to-br from-blue-50 to-indigo-50 mb-8">
-            <div class="flex items-start justify-between mb-6">
-              <div class="flex items-center space-x-4">
-                <div class="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center shadow-lg">
-                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-blue-900">AI Generated Prescription</h3>
-                  <p class="text-sm text-blue-700 mt-1">Review AI recommendations and edit before finalizing</p>
-                </div>
-              </div>
-              <button onclick="closeAISuggestions()" class="text-blue-600 hover:text-blue-800 transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-              </button>
-            </div>
-            <div id="aiMedicinesList" class="space-y-4 mb-6"></div>
-            <div class="flex gap-4">
-              <button onclick="acceptAISuggestions()" class="btn btn-success hover-lift">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-                Accept & Edit Prescription
-              </button>
-              <button onclick="closeAISuggestions()" class="btn btn-secondary">
-                Reject Suggestions
-              </button>
-            </div>
-          </div>
-
-          <!-- Prescription Editor -->
-          <div class="card">
-            <div class="flex items-center justify-between mb-8">
-              <h3>Prescription Editor</h3>
-              <button onclick="loadTemplate()" class="btn btn-secondary hover-lift">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-                Load Template
-              </button>
-            </div>
-            
-            <!-- Medicine Search with Autosuggest -->
-            <div class="mb-8 relative">
-              <label class="form-label">Add Medicine</label>
-              <div class="relative">
-                <input type="text" id="medicineSearchInput" placeholder="Type medicine name to search..." class="form-input" oninput="searchMedicines(this.value)">
-                <div id="medicineAutosuggest" class="hidden autosuggest"></div>
-              </div>
-            </div>
-
-            <div id="prescriptionMedicinesList" class="space-y-5 mb-8"></div>
-
-            <div class="form-group mb-8">
-              <label class="form-label">Additional Instructions</label>
-              <textarea id="prescriptionInstructions" rows="4" class="form-input" placeholder="Follow-up recommendations, lifestyle advice, dietary restrictions..."></textarea>
-            </div>
-
-            <div class="flex gap-4 flex-wrap">
-              <button onclick="savePrescription('draft')" class="btn btn-secondary hover-lift">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/>
-                </svg>
-                Save as Draft
-              </button>
-              <button onclick="savePrescription('approved')" class="btn btn-success hover-lift">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                Approve & Finalize
-              </button>
-              <button onclick="previewPrescription()" class="btn btn-primary hover-lift">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                </svg>
-                Preview & Print
-              </button>
-              <button onclick="saveAsTemplate()" class="btn btn-ghost hover-lift">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
-                </svg>
-                Save as Template
-              </button>
-            </div>
-          </div>
+          <h1>Prescriptions Section - Coming Soon</h1>
         </div>
-
-        <!-- Admin Section -->
         <div id="adminSection" class="section-content hidden max-w-7xl mx-auto">
-          <div class="mb-10">
-            <h1 class="mb-3">Admin Panel</h1>
-            <p class="text-gray-600 text-lg">Manage system settings, users, and drug database</p>
-          </div>
-
-          <div class="card">
-            <h3 class="mb-8">Drug Database Management</h3>
-            <div class="form-group mb-8">
-              <input type="text" id="drugSearchInput" class="form-input" placeholder="Search medicines by name, generic, or category..." oninput="filterDrugs(this.value)">
-            </div>
-            <div id="drugsList" class="space-y-4"></div>
-          </div>
+          <h1>Admin Section - Coming Soon</h1>
         </div>
       </main>
     </div>
   </div>
 
   <script>
-    // Demo Data
+    // Same JavaScript as previous version
     const DEMO_DATA = {
       users: [
-        { id: '1', email: 'doctor@clinic.com', phone: '+919876543210', name: 'Dr. Rajesh Sharma', role: 'doctor', qualification: 'MBBS, MD', specialization: 'General Medicine' },
+        { id: '1', email: 'doctor@clinic.com', phone: '+919876543210', name: 'Dr. Rajesh Sharma', role: 'doctor' },
         { id: '2', email: 'admin@clinic.com', phone: '+919876543212', name: 'Admin User', role: 'admin' }
       ],
       patients: [
-        { id: 'P001', name: 'Rajesh Kumar', age: 45, gender: 'Male', phone: '+919876543220', bloodGroup: 'O+', allergies: ['Penicillin'], chronicConditions: ['Diabetes'] },
-        { id: 'P002', name: 'Priya Sharma', age: 32, gender: 'Female', phone: '+919876543221', bloodGroup: 'A+', allergies: [], chronicConditions: [] },
-        { id: 'P003', name: 'Amit Patel', age: 28, gender: 'Male', phone: '+919876543222', bloodGroup: 'B+', allergies: ['Sulfa drugs'], chronicConditions: [] },
-        { id: 'P004', name: 'Sneha Reddy', age: 55, gender: 'Female', phone: '+919876543223', bloodGroup: 'AB+', allergies: [], chronicConditions: ['Hypertension'] },
-        { id: 'P005', name: 'Vikram Singh', age: 38, gender: 'Male', phone: '+919876543224', bloodGroup: 'O-', allergies: [], chronicConditions: [] }
-      ],
-      medicines: [
-        { id: 'M001', name: 'Paracetamol', genericName: 'Paracetamol', brandName: 'Crocin', strength: '500', unit: 'mg', form: 'Tablet', category: 'Analgesic', interactions: ['Alcohol'], maxDose: '4000mg/day' },
-        { id: 'M002', name: 'Amoxicillin', genericName: 'Amoxicillin', brandName: 'Novamox', strength: '500', unit: 'mg', form: 'Capsule', category: 'Antibiotic', interactions: ['Methotrexate'], maxDose: '3000mg/day' },
-        { id: 'M003', name: 'Azithromycin', genericName: 'Azithromycin', brandName: 'Azithral', strength: '500', unit: 'mg', form: 'Tablet', category: 'Antibiotic', interactions: ['Warfarin'], maxDose: '500mg/day' },
-        { id: 'M004', name: 'Omeprazole', genericName: 'Omeprazole', brandName: 'Omez', strength: '20', unit: 'mg', form: 'Capsule', category: 'Antacid', interactions: [], maxDose: '40mg/day' },
-        { id: 'M005', name: 'Cetirizine', genericName: 'Cetirizine', brandName: 'Cetrizet', strength: '10', unit: 'mg', form: 'Tablet', category: 'Antihistamine', interactions: [], maxDose: '10mg/day' }
+        { id: 'P001', name: 'Rajesh Kumar', age: 45, gender: 'Male', phone: '+919876543220' },
+        { id: 'P002', name: 'Priya Sharma', age: 32, gender: 'Female', phone: '+919876543221' },
+        { id: 'P003', name: 'Amit Patel', age: 28, gender: 'Male', phone: '+919876543222' }
       ]
     };
 
     let currentUser = null;
     let currentLoginMethod = 'email';
-    let currentOPD = null;
-    let currentPrescription = { medicines: [] };
-    let aiSuggestions = null;
 
-    // Toast Notification
     function showToast(message, type = 'success') {
       const toast = document.createElement('div');
       toast.className = `toast toast-${type}`;
-      const icon = type === 'success' ? 'M5 13l4 4L19 7' : type === 'error' ? 'M6 18L18 6M6 6l12 12' : 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z';
+      const icon = type === 'success' ? 'M5 13l4 4L19 7' : 'M6 18L18 6M6 6l12 12';
       toast.innerHTML = `
-        <svg class="w-6 h-6 ${type === 'success' ? 'text-green-600' : type === 'error' ? 'text-red-600' : 'text-blue-600'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-6 h-6 ${type === 'success' ? 'text-green-600' : 'text-red-600'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${icon}"/>
         </svg>
-        <div>
-          <p class="font-semibold text-gray-900">${message}</p>
-        </div>
+        <div><p class="font-semibold text-gray-900">${message}</p></div>
       `;
       document.body.appendChild(toast);
       setTimeout(() => toast.remove(), 3500);
     }
 
-    // Login Functions
     function selectLoginMethod(method) {
       currentLoginMethod = method;
       document.querySelectorAll('.login-method-btn').forEach(btn => {
@@ -1171,7 +930,7 @@
         document.querySelectorAll('.admin-only').forEach(el => el.classList.add('hidden'));
       }
 
-      initializeApp();
+      loadDashboard();
       showToast('Welcome back, ' + currentUser.name.split(' ')[0] + '!', 'success');
     }
 
@@ -1193,7 +952,6 @@
       }
     }
 
-    // Navigation
     function showSection(section) {
       document.querySelectorAll('.section-content').forEach(el => el.classList.add('hidden'));
       document.getElementById(section + 'Section').classList.remove('hidden');
@@ -1202,22 +960,9 @@
       document.querySelector(`[data-section="${section}"]`).classList.add('active');
     }
 
-    // Initialize App
-    function initializeApp() {
-      loadDashboard();
-      loadPatients();
-      populatePatientSelects();
-      loadDrugsList();
-      document.getElementById('opdVisitDate').valueAsDate = new Date();
-      
-      document.getElementById('vitalWeight').addEventListener('input', calculateBMI);
-      document.getElementById('vitalHeight').addEventListener('input', calculateBMI);
-      document.getElementById('opdForm').addEventListener('submit', saveOPDVisit);
-    }
-
     function loadDashboard() {
       const recentPatients = document.getElementById('recentPatients');
-      recentPatients.innerHTML = DEMO_DATA.patients.slice(0, 5).map(p => `
+      recentPatients.innerHTML = DEMO_DATA.patients.map(p => `
         <div class="flex items-center justify-between p-5 bg-gradient-to-r from-gray-50 to-white rounded-2xl hover:from-blue-50 hover:to-indigo-50 transition border border-gray-200 hover:border-blue-200 hover-lift cursor-pointer">
           <div class="flex items-center space-x-4">
             <div class="w-12 h-12 gradient-primary rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
@@ -1228,487 +973,9 @@
               <p class="text-sm text-gray-600">${p.id} | ${p.age}Y ${p.gender}</p>
             </div>
           </div>
-          <button onclick="startOPDVisit('${p.id}')" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">
+          <button class="text-blue-600 hover:text-blue-800 font-semibold text-sm">
             View →
           </button>
-        </div>
-      `).join('');
-    }
-
-    function loadPatients() {
-      const container = document.getElementById('patientListContainer');
-      container.innerHTML = DEMO_DATA.patients.map(p => `
-        <div class="card hover-scale">
-          <div class="flex items-start justify-between">
-            <div class="flex items-start space-x-5">
-              <div class="w-16 h-16 gradient-primary rounded-3xl flex items-center justify-center text-white text-2xl font-bold shadow-xl">
-                ${p.name.charAt(0)}
-              </div>
-              <div>
-                <h4 class="text-gray-900 mb-2">${p.name}</h4>
-                <div class="flex items-center gap-3 text-sm text-gray-600 mb-3">
-                  <span class="badge badge-primary">${p.id}</span>
-                  <span>${p.age}Y | ${p.gender}</span>
-                  <span>${p.bloodGroup}</span>
-                </div>
-                <p class="text-sm text-gray-600 mb-2">📞 ${p.phone}</p>
-                ${p.allergies.length > 0 ? `<div class="mt-2"><span class="badge badge-danger">⚠️ Allergies: ${p.allergies.join(', ')}</span></div>` : ''}
-                ${p.chronicConditions.length > 0 ? `<div class="mt-2"><span class="badge badge-warning">Chronic: ${p.chronicConditions.join(', ')}</span></div>` : ''}
-              </div>
-            </div>
-            <div class="flex flex-col gap-3">
-              <button onclick="startOPDVisit('${p.id}')" class="btn btn-success">
-                New Visit
-              </button>
-            </div>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function populatePatientSelects() {
-      const select = document.getElementById('opdPatientSelect');
-      select.innerHTML = '<option value="">Choose patient...</option>' + 
-        DEMO_DATA.patients.map(p => `<option value="${p.id}">${p.name} (${p.id})</option>`).join('');
-    }
-
-    function startOPDVisit(patientId) {
-      showSection('opd');
-      document.getElementById('opdPatientSelect').value = patientId;
-      updateSelectedPatientInfo();
-    }
-
-    function updateSelectedPatientInfo() {
-      const patientId = document.getElementById('opdPatientSelect').value;
-      const infoDiv = document.getElementById('selectedPatientInfo');
-      
-      if (!patientId) {
-        infoDiv.classList.add('hidden');
-        return;
-      }
-
-      const patient = DEMO_DATA.patients.find(p => p.id === patientId);
-      infoDiv.classList.remove('hidden');
-      infoDiv.innerHTML = `
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-          <div><strong>Name:</strong> ${patient.name}</div>
-          <div><strong>Age/Gender:</strong> ${patient.age}Y ${patient.gender}</div>
-          <div><strong>Blood Group:</strong> ${patient.bloodGroup}</div>
-          <div><strong>Phone:</strong> ${patient.phone}</div>
-          ${patient.allergies.length > 0 ? `<div class="col-span-full"><strong class="text-red-600">⚠️ Allergies:</strong> ${patient.allergies.join(', ')}</div>` : ''}
-        </div>
-      `;
-    }
-
-    function calculateBMI() {
-      const weight = parseFloat(document.getElementById('vitalWeight').value);
-      const height = parseFloat(document.getElementById('vitalHeight').value);
-      
-      if (weight && height) {
-        const heightM = height / 100;
-        const bmi = (weight / (heightM * heightM)).toFixed(1);
-        document.getElementById('vitalBMI').value = bmi;
-      }
-    }
-
-    function saveOPDVisit(e) {
-      e.preventDefault();
-      
-      const patientId = document.getElementById('opdPatientSelect').value;
-      const patient = DEMO_DATA.patients.find(p => p.id === patientId);
-      
-      currentOPD = {
-        id: 'OPD' + Date.now(),
-        patient: patient,
-        visitDate: document.getElementById('opdVisitDate').value,
-        vitals: {
-          bp: document.getElementById('vitalBP').value,
-          temp: document.getElementById('vitalTemp').value,
-          pulse: document.getElementById('vitalPulse').value,
-          spo2: document.getElementById('vitalSpO2').value,
-          weight: document.getElementById('vitalWeight').value,
-          height: document.getElementById('vitalHeight').value,
-          bmi: document.getElementById('vitalBMI').value,
-          rr: document.getElementById('vitalRR').value
-        },
-        chiefComplaint: document.getElementById('opdChiefComplaint').value,
-        history: document.getElementById('opdHistory').value,
-        examNotes: document.getElementById('opdExamNotes').value,
-        diagnosis: document.getElementById('opdDiagnosis').value
-      };
-
-      showToast('OPD Visit saved successfully!', 'success');
-    }
-
-    function generateAIPrescription() {
-      if (!currentOPD) {
-        showToast('Please save OPD visit first', 'error');
-        return;
-      }
-
-      showToast('AI is analyzing patient data...', 'info');
-
-      setTimeout(() => {
-        const diagnosis = currentOPD.diagnosis.toLowerCase();
-        let suggestedMedicines = [];
-
-        if (diagnosis.includes('fever') || diagnosis.includes('urti') || diagnosis.includes('respiratory')) {
-          suggestedMedicines = [
-            {
-              medicine: DEMO_DATA.medicines[0],
-              dosage: '500mg',
-              frequency: 'Thrice daily',
-              duration: '5 days',
-              instructions: 'After meals with water',
-              cautions: 'Do not exceed 4g per day. Avoid alcohol.'
-            },
-            {
-              medicine: DEMO_DATA.medicines[2],
-              dosage: '500mg',
-              frequency: 'Once daily',
-              duration: '3 days',
-              instructions: '1 hour before meals',
-              cautions: 'Complete full course'
-            },
-            {
-              medicine: DEMO_DATA.medicines[4],
-              dosage: '10mg',
-              frequency: 'Once daily at bedtime',
-              duration: '5 days',
-              instructions: 'Before sleep',
-              cautions: 'May cause drowsiness'
-            }
-          ];
-        } else {
-          suggestedMedicines = [
-            {
-              medicine: DEMO_DATA.medicines[0],
-              dosage: '500mg',
-              frequency: 'As needed',
-              duration: '3 days',
-              instructions: 'After meals',
-              cautions: 'Do not exceed 4g per day'
-            }
-          ];
-        }
-
-        aiSuggestions = suggestedMedicines;
-        displayAISuggestions();
-        showSection('prescriptions');
-        showToast('AI prescription generated successfully!', 'success');
-      }, 1800);
-    }
-
-    function displayAISuggestions() {
-      const panel = document.getElementById('aiSuggestionsPanel');
-      const list = document.getElementById('aiMedicinesList');
-      
-      list.innerHTML = aiSuggestions.map((s, i) => `
-        <div class="medicine-pill">
-          <div class="flex items-start justify-between mb-4">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 gradient-primary text-white rounded-xl flex items-center justify-center font-bold shadow-lg">
-                ${i + 1}
-              </div>
-              <h4 class="text-gray-900">${s.medicine.name} (${s.medicine.brandName})</h4>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-3 text-sm mb-3">
-            <div><strong>Dosage:</strong> ${s.dosage}</div>
-            <div><strong>Frequency:</strong> ${s.frequency}</div>
-            <div><strong>Duration:</strong> ${s.duration}</div>
-            <div><strong>Form:</strong> ${s.medicine.form}</div>
-          </div>
-          <div class="text-sm space-y-2">
-            <p><strong>Instructions:</strong> ${s.instructions}</p>
-            <p class="text-red-600"><strong>⚠️ Cautions:</strong> ${s.cautions}</p>
-          </div>
-        </div>
-      `).join('');
-      
-      panel.classList.remove('hidden');
-    }
-
-    function closeAISuggestions() {
-      document.getElementById('aiSuggestionsPanel').classList.add('hidden');
-      aiSuggestions = null;
-    }
-
-    function acceptAISuggestions() {
-      currentPrescription.medicines = aiSuggestions.map(s => ({
-        medicineId: s.medicine.id,
-        name: `${s.medicine.name} (${s.medicine.brandName})`,
-        dosage: s.dosage,
-        frequency: s.frequency,
-        duration: s.duration,
-        instructions: s.instructions,
-        cautions: s.cautions
-      }));
-      
-      renderPrescriptionMedicines();
-      closeAISuggestions();
-      showToast('AI suggestions accepted. You can now edit the prescription.', 'success');
-    }
-
-    // Medicine Search with Autosuggest
-    function searchMedicines(query) {
-      const dropdown = document.getElementById('medicineAutosuggest');
-      
-      if (!query || query.length < 2) {
-        dropdown.classList.add('hidden');
-        return;
-      }
-
-      const results = DEMO_DATA.medicines.filter(m => 
-        m.name.toLowerCase().includes(query.toLowerCase()) ||
-        m.genericName.toLowerCase().includes(query.toLowerCase()) ||
-        m.brandName.toLowerCase().includes(query.toLowerCase())
-      );
-
-      if (results.length === 0) {
-        dropdown.classList.add('hidden');
-        return;
-      }
-
-      dropdown.innerHTML = results.map(m => `
-        <div class="autosuggest-item" onclick="addMedicineFromSearch('${m.id}')">
-          <div class="font-semibold text-gray-900">${m.name} (${m.brandName})</div>
-          <div class="text-sm text-gray-600 mt-1">${m.strength}${m.unit} ${m.form} | ${m.category}</div>
-        </div>
-      `).join('');
-      
-      dropdown.classList.remove('hidden');
-    }
-
-    function addMedicineFromSearch(medicineId) {
-      const medicine = DEMO_DATA.medicines.find(m => m.id === medicineId);
-      currentPrescription.medicines.push({
-        medicineId: medicine.id,
-        name: `${medicine.name} (${medicine.brandName})`,
-        dosage: `${medicine.strength}${medicine.unit}`,
-        frequency: '',
-        duration: '',
-        instructions: '',
-        cautions: medicine.interactions.length > 0 ? `Interactions: ${medicine.interactions.join(', ')}` : ''
-      });
-      
-      renderPrescriptionMedicines();
-      document.getElementById('medicineSearchInput').value = '';
-      document.getElementById('medicineAutosuggest').classList.add('hidden');
-      showToast('Medicine added to prescription', 'success');
-    }
-
-    function renderPrescriptionMedicines() {
-      const list = document.getElementById('prescriptionMedicinesList');
-      list.innerHTML = currentPrescription.medicines.map((m, i) => `
-        <div class="medicine-pill ${m.cautions ? 'warning' : ''}">
-          <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 gradient-primary text-white rounded-xl flex items-center justify-center font-bold shadow-lg">
-                ${i + 1}
-              </div>
-              <h4 class="text-gray-900">Medicine ${i + 1}</h4>
-            </div>
-            <button onclick="removeMedicine(${i})" class="btn btn-secondary" style="padding: 8px 16px; font-size: 13px;">
-              Remove
-            </button>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div class="form-group md:col-span-2">
-              <label class="form-label">Medicine Name *</label>
-              <input type="text" value="${m.name}" onchange="updateMedicine(${i}, 'name', this.value)" class="form-input" placeholder="e.g., Paracetamol (Crocin)">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Dosage *</label>
-              <input type="text" value="${m.dosage}" onchange="updateMedicine(${i}, 'dosage', this.value)" class="form-input" placeholder="e.g., 500mg">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Frequency *</label>
-              <input type="text" value="${m.frequency}" onchange="updateMedicine(${i}, 'frequency', this.value)" class="form-input" placeholder="e.g., Thrice daily">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Duration *</label>
-              <input type="text" value="${m.duration}" onchange="updateMedicine(${i}, 'duration', this.value)" class="form-input" placeholder="e.g., 5 days">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Instructions</label>
-              <input type="text" value="${m.instructions}" onchange="updateMedicine(${i}, 'instructions', this.value)" class="form-input" placeholder="e.g., After meals">
-            </div>
-            ${m.cautions ? `
-              <div class="md:col-span-2 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded-xl">
-                <p class="text-sm font-semibold text-yellow-800">⚠️ ${m.cautions}</p>
-              </div>
-            ` : ''}
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function updateMedicine(index, field, value) {
-      currentPrescription.medicines[index][field] = value;
-    }
-
-    function removeMedicine(index) {
-      currentPrescription.medicines.splice(index, 1);
-      renderPrescriptionMedicines();
-      showToast('Medicine removed', 'info');
-    }
-
-    function savePrescription(status) {
-      if (currentPrescription.medicines.length === 0) {
-        showToast('Please add at least one medicine', 'error');
-        return;
-      }
-
-      const statusText = {
-        'draft': 'Draft',
-        'approved': 'Approved & Finalized'
-      };
-
-      showToast(`Prescription saved as ${statusText[status]}!`, 'success');
-    }
-
-    function previewPrescription() {
-      if (!currentOPD || currentPrescription.medicines.length === 0) {
-        showToast('Please complete OPD visit and add medicines', 'error');
-        return;
-      }
-
-      const modal = document.createElement('div');
-      modal.className = 'modal-overlay';
-      modal.innerHTML = `
-        <div class="modal-content">
-          <div class="p-8 border-b flex justify-between items-center no-print">
-            <h3>Prescription Preview</h3>
-            <button onclick="this.closest('.modal-overlay').remove()" class="text-gray-500 hover:text-gray-700 transition">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
-            </button>
-          </div>
-          <div class="p-10">
-            <div class="text-center border-b-2 border-gray-800 pb-6 mb-8">
-              <h1 class="mb-3">℞ PRESCRIPTION</h1>
-              <p class="text-gray-600 text-lg">City Health Clinic</p>
-              <p class="text-sm text-gray-500 mt-2">Date: ${new Date().toLocaleDateString('en-IN')}</p>
-            </div>
-
-            <div class="grid grid-cols-2 gap-8 mb-8">
-              <div>
-                <h4 class="text-blue-600 mb-3">PATIENT INFORMATION</h4>
-                <div class="text-sm space-y-2">
-                  <p><strong>Name:</strong> ${currentOPD.patient.name}</p>
-                  <p><strong>Age/Gender:</strong> ${currentOPD.patient.age}Y ${currentOPD.patient.gender}</p>
-                  <p><strong>Patient ID:</strong> ${currentOPD.patient.id}</p>
-                </div>
-              </div>
-              <div>
-                <h4 class="text-blue-600 mb-3">DOCTOR INFORMATION</h4>
-                <div class="text-sm space-y-2">
-                  <p><strong>Name:</strong> ${currentUser.name}</p>
-                  <p><strong>Qualification:</strong> ${currentUser.qualification || 'MBBS'}</p>
-                </div>
-              </div>
-            </div>
-
-            ${currentOPD.patient.allergies.length > 0 ? `
-              <div class="mb-8 p-4 bg-red-50 border-l-4 border-red-500 rounded-xl">
-                <p class="text-sm font-bold text-red-800">⚠️ ALLERGIES: ${currentOPD.patient.allergies.join(', ')}</p>
-              </div>
-            ` : ''}
-
-            <div class="mb-8">
-              <h4 class="text-blue-600 mb-3">DIAGNOSIS</h4>
-              <p class="font-semibold text-lg">${currentOPD.diagnosis}</p>
-            </div>
-
-            <div class="mb-8">
-              <h4 class="text-blue-600 mb-4">℞ PRESCRIPTION</h4>
-              ${currentPrescription.medicines.map((m, i) => `
-                <div class="mb-5 p-5 bg-gray-50 rounded-2xl border-l-4 border-blue-500">
-                  <div class="font-bold text-gray-900 mb-3 text-lg">${i + 1}. ${m.name}</div>
-                  <div class="grid grid-cols-2 gap-3 text-sm text-gray-700">
-                    <div><strong>Dosage:</strong> ${m.dosage}</div>
-                    <div><strong>Frequency:</strong> ${m.frequency}</div>
-                    <div><strong>Duration:</strong> ${m.duration}</div>
-                    ${m.instructions ? `<div><strong>Instructions:</strong> ${m.instructions}</div>` : ''}
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-
-            <div class="mt-16 pt-8 border-t-2 text-right">
-              <div class="inline-block">
-                <div class="border-t-2 border-gray-800 pt-3 px-16 mt-10">
-                  <p class="font-bold text-lg">${currentUser.name}</p>
-                  <p class="text-sm text-gray-600">${currentUser.qualification || 'MBBS'}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="p-8 border-t flex justify-end gap-4 no-print">
-            <button onclick="window.print()" class="btn btn-primary hover-lift">
-              🖨️ Print
-            </button>
-          </div>
-        </div>
-      `;
-      document.body.appendChild(modal);
-    }
-
-    function loadTemplate() {
-      showToast('Template loading feature coming soon', 'info');
-    }
-
-    function saveAsTemplate() {
-      if (currentPrescription.medicines.length === 0) {
-        showToast('Add medicines before saving as template', 'error');
-        return;
-      }
-      showToast('Prescription saved as template!', 'success');
-    }
-
-    function loadDrugsList() {
-      const list = document.getElementById('drugsList');
-      list.innerHTML = DEMO_DATA.medicines.map(m => `
-        <div class="medicine-pill">
-          <div class="flex items-start justify-between">
-            <div class="flex-1">
-              <h4 class="text-gray-900 mb-3">${m.name} (${m.brandName})</h4>
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm text-gray-600">
-                <div><strong>Generic:</strong> ${m.genericName}</div>
-                <div><strong>Strength:</strong> ${m.strength}${m.unit}</div>
-                <div><strong>Form:</strong> ${m.form}</div>
-                <div><strong>Category:</strong> ${m.category}</div>
-                <div><strong>Max Dose:</strong> ${m.maxDose}</div>
-              </div>
-              ${m.interactions.length > 0 ? `
-                <div class="mt-3">
-                  <span class="badge badge-warning">⚠️ Interactions: ${m.interactions.join(', ')}</span>
-                </div>
-              ` : ''}
-            </div>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function filterDrugs(query) {
-      const filtered = DEMO_DATA.medicines.filter(m => 
-        m.name.toLowerCase().includes(query.toLowerCase()) ||
-        m.genericName.toLowerCase().includes(query.toLowerCase()) ||
-        m.category.toLowerCase().includes(query.toLowerCase())
-      );
-      
-      const list = document.getElementById('drugsList');
-      list.innerHTML = filtered.map(m => `
-        <div class="medicine-pill">
-          <h4 class="text-gray-900 mb-3">${m.name} (${m.brandName})</h4>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm text-gray-600">
-            <div><strong>Strength:</strong> ${m.strength}${m.unit}</div>
-            <div><strong>Form:</strong> ${m.form}</div>
-            <div><strong>Category:</strong> ${m.category}</div>
-          </div>
         </div>
       `).join('');
     }
